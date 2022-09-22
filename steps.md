@@ -63,7 +63,7 @@ useradd -m -G wheel 'username'
 
 EDITOR=nano visudo
 
-# %wheel ALL=(ALL) ALL
+remove # from first %wheel ALL=(ALL) ALL
 
 exit
 umount -R /mnt
