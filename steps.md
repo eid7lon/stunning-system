@@ -1,4 +1,6 @@
-loadkeys uk
+`loadkeys uk`
+
+
 
 ls /sys/firmware/efi/efivars
 
