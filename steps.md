@@ -6,10 +6,12 @@
 
 ls /sys/firmware/efi/efivars
 
-iwctl
-device list
-station 'device' get-networks
-station 'device' connect 'SSID'
+Connect to WiFi:
+
+`iwctl`
+`device list`
+`station 'device' get-networks`
+`station 'device' connect 'SSID'`
 
 ping -c 3 archlinux.org
 
