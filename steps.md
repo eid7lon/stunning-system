@@ -18,8 +18,18 @@ Connect to WiFi:
 
 ping -c 3 archlinux.org
 
-timedatectl set-ntp true
-timedatectl status
+
+Ensure system clock:
+
+`timedatectl set-ntp true`
+
+`timedatectl status`
+
+Correct system clock:
+
+`timedatectl list-timezone`
+
+`timedatectl set-timezone [TIMEZONE]`
 
 fdisk -l
 cfdisk /dev/sda
