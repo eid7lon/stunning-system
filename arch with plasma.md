@@ -118,7 +118,7 @@ hwclock --systohc
 
 **Uncomment desired localization (example: #en_UK.UTF-8 UTF-8):**
 ```
-nvim nano /etc/locale.gen
+nvim /etc/locale.gen
 ```
 
 **Generate locale file:**
@@ -195,8 +195,8 @@ grub-mkconfig -o /boot/grub/grub.cfg
 **Install Plasma-meta:**
 ```
 pacman -S xorg plasma-meta
-systemctl enable sddm.service
-systemctl enable NetworkManager.service
+systemctl enable sddm
+systemctl enable NetworkManager
 ```
 
 **Enable breeze login screen:**
