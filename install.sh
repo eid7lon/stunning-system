@@ -9,7 +9,7 @@ PKGS=(
 
 for PKG in "${PKGS}"; do
 	echo "installing: ${PKG}"
-	yes | yay -S "$PKG" --answerdiff=None --answerclean=None --needed
+	yes | yay -S "$PKG" --answerdiff=None --answerclean=None --sudoloop --needed
 done
 
 echo
