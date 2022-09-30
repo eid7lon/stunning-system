@@ -1,6 +1,6 @@
 Keyboard layout list:
 
-`localectl list-keymaps` 
+```localectl list-keymaps```
 
 Load keymap:
 
