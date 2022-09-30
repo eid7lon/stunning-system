@@ -1,36 +1,33 @@
-Keyboard layout list:
-
+**Keyboard layout:**
 ```
-localectl list-keymaps
+loadkeys uk
 ```
 
-Load keymap:
-
-`loadkeys uk`
-
-To verify the boot mode:
-
-`ls /sys/firmware/efi/efivars`
+**To verify the boot mode:**
+```
+ls /sys/firmware/efi/efivars
+```
 
 **Connect to WiFi:**
 ```
 iwctl
 device list
 station [device] get-networks
-`station [device] connect 'SSID'
+station [device] connect 'SSID'
 ```
 
-Test connectivity:
+**Test connectivity:**
+```
+ping -c 3 archlinux.org
+```
 
-`ping -c 3 archlinux.org`
-
-Update mirrorlist:
-
-`pacman -Sy`
-
-`pacman -S reflector`
-
-`reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist`
+**Update mirrorlist:**
+```
+pacman -Sy
+pacman -S reflector
+reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+```
+**Ensure system clock:**
 
 Ensure system clock:
 
