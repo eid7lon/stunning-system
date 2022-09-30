@@ -221,7 +221,7 @@ sudo pacman -Syy
 sudo pacman -S git
 git clone https://aur.archlinux.org/yay.git
 cd yay
-sudo makepkg -si
+makepkg -si
 cd ..
 rm -rf yay
 ```
