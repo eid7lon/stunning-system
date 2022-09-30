@@ -10,14 +10,10 @@ To verify the boot mode:
 
 `ls /sys/firmware/efi/efivars`
 
-Connect to WiFi:
-
+**Connect to WiFi:**
 `iwctl`
-
 `device list`
-
 `station [device] get-networks`
-
 `station [device] connect 'SSID'`
 
 Test connectivity:
