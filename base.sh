@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 echo
 echo "Starting the installation"
 echo
