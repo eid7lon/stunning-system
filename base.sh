@@ -4,6 +4,7 @@ echo "Starting the installation"
 echo
 
 PKGS=(
+	'amd-ucode'
         'tlp'
 	'wget'
 	#Bluetooth
