@@ -164,7 +164,7 @@ passwd
 
 **Install base packages:**
 ```
-pacman -S grub efibootmgr networkmanager network-manager-applet dialog wpa_supplicant xdg-utils xdg-user-dirs git reflector tlp
+pacman -S grub efibootmgr networkmanager network-manager-applet dialog wpa_supplicant xdg-utils xdg-user-dirs git reflector tlp bluez bluez-utils alsa-utils pulseaudio pulseaudio-bluetooth
 ```
 
 **Setup Grub bootloader:**
@@ -233,7 +233,7 @@ sudo systemctl enable --now reflector.timer
 
 **Install i3-gaps and LightDM:**
 ```
-sudo pacman -S xorg i3-gaps dmenu lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings firefox picom kitty
+sudo pacman -S xorg i3-gaps dmenu lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings materia-gtk-theme papirus-icon-theme nitrogen firefox picom kitty  
 ```
 
 **Enable LightDM:**
@@ -241,8 +241,29 @@ sudo pacman -S xorg i3-gaps dmenu lightdm lightdm-gtk-greeter lightdm-gtk-greete
 sudo systemctl enable lightdm
 ```
 
-**Optional:**
-Set keyboard for the terminal:
+**Set keyboard for the terminal:**
 ```
 setxkbmap uk(or gb)
 ```
+
+**Set keymap and nitrogen on launch:**
+```
+nvim .config/i3/config
+```
+Add lines to the end of the file:
+```
+#Keyboard
+exec setxkbmap uk(or gb) &
+
+#Nitroged
+exec nitrogen --restore
+
+#Picom
+exec picom -f
+```
+
+**Enable theme for lightDM greeter:**
+```
+sudo lightdm-gtk-greeter-settings
+```
+
