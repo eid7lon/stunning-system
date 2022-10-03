@@ -233,7 +233,7 @@ sudo systemctl enable --now reflector.timer
 
 **Install i3-gaps and LightDM:**
 ```
-sudo pacman -S xorg i3-gaps dmenu lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings materia-gtk-theme papirus-icon-theme nitrogen firefox picom kitty ranger  
+sudo pacman -S xorg i3-gaps rofi lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings materia-gtk-theme papirus-icon-theme nitrogen firefox picom kitty ranger  
 ```
 
 **Enable LightDM:**
