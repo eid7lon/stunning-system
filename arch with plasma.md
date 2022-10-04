@@ -25,7 +25,7 @@ ping -c 3 archlinux.org
 ```
 pacman -Sy
 pacman -S reflector
-reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+reflector -c United Kingdom -a 6 --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
 **Ensure system clock:**
@@ -88,7 +88,7 @@ mount --mkdir /dev/sda1 /mnt/boot
 **Install base packages plus kitty and neovim:**
 
 ```
-pacstrap /mnt base base-devel linux linux-firmware neovim kitty
+pacstrap /mnt base base-devel linux linux-firmware neovim kitty tlp reflector
 ```
 
 **Create fstab file:**
@@ -132,9 +132,7 @@ nvim /etc/locale.conf
 ```
 Add these lines:
 ```
-   LANG=en_GB.UTF-8
-   LANGUAGE=en_GB
-   LC_ALL=C
+LANG=en_GB.UTF-8
 ```
 
 **Update keyboard layout:**
@@ -159,9 +157,10 @@ passwd
 **Update hosts file:**
 ```
 nvim /etc/hosts
-127.0.0.1	localhost.localdomain	localhost
-::1	        localhost.localdomain	localhost
-127.0.0.1	[hostname].localdomain	[hostname]
+127.0.0.1   localhost
+::1         localhost
+127.0.1.1   [hostname].localdomain  [hostname]
+
 ```
 
 **Add user with desired [username], set password and give permissions:**
@@ -197,6 +196,10 @@ grub-mkconfig -o /boot/grub/grub.cfg
 pacman -S xorg plasma-meta
 systemctl enable sddm
 systemctl enable NetworkManager
+systemctl enable tlp
+systemctl mask systemd-rfkill.service
+systemctl mask systemd-rfkill.service
+systemctl enable fstrim.timer
 ```
 
 **Enable breeze login screen:**
@@ -213,6 +216,11 @@ Add to  [Theme] > # Current theme name:
 exit
 umount -R /mnt
 reboot
+```
+
+**Update mirrorlist:**
+```
+reflector -c United Kingdom -a 6 --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
 **Install Yay:**
