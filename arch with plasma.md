@@ -8,10 +8,13 @@ loadkeys uk
 ls /sys/firmware/efi/efivars
 ```
 
+setfont ter-132n
+
 **Connect to WiFi:**
 ```
 iwctl
 device list
+station [device] scan
 station [device] get-networks
 station [device] connect 'SSID'
 ```
